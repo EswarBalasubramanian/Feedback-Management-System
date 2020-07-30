@@ -1,0 +1,41 @@
+<%- include("header") -%>
+
+<% let count = 1; let loop1 = 0; %>
+<form action="/response" method="post">
+  <% defaultQuestions.forEach(function(question){  let loop2 = 0; %>
+
+      <h3 class="d-flex justify-content-left"><%= count+'.'+question %></h3><br>
+      <!-- To Create a table consisting both staff names and respective Inputs -->
+
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" style="width: 200px;">STAFF NAME</th>
+            <th scope="col" style="width: 100px;">EXCELLENT</th>
+            <th scope="col" style="width: 100px;">GOOD</th>
+            <th scope="col" style="width: 100px;">SATISFACTORY</th>
+            <th scope="col" style="width: 100px;">POOR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% staffNames.forEach(function(name){  %>
+            <tr>
+              <td class="d-flex justify-content-left" scope="row"><%= name %></td>
+              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="10"></td>
+              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="7.5"></td>
+              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="5"></td>
+              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="2.5"></td>
+            </tr>
+        <%  loop2++; }); %>
+        </tbody>
+      </table><br>
+
+  <%  count++; loop1++; }); %>
+  <!-- <p>Form Description</p> -->
+  <input type="hidden" name="formName" value="<%= formName %>">
+  <button type="submit" class="btn btn-info" style="margin-bottom: 5rem;">Submit</button>
+</form>
+
+</div>
+
+<%- include("footer") -%>

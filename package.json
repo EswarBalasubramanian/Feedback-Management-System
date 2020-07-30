@@ -1,0 +1,19 @@
+{
+  "name": "feedback-system",
+  "version": "1.0.0",
+  "description": "My first feedback management system webapp.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Dada",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.2",
+    "node": "^13.8.0",
+    "tableexport": "^5.2.0"
+  }
+}

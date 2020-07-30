@@ -1,0 +1,24 @@
+<%- include("header") -%>
+
+<div class="card" style="margin-top: 5%;">
+  <div class="card-body">
+    <form action="/create" method="post">
+      <% for(let i=0;i<setLength;i++){ %>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Staff <%= i+1 %>:</label>
+        <div class="col-sm-10">
+          <input type="text" name="staffArr" class="form-control">
+        </div>
+      </div>
+
+      <%  } %>
+      
+      <input type="hidden" name="siteTitle" value="staffs">
+      <button class="btn btn-info" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<%- include("footer") -%>

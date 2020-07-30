@@ -1,0 +1,22 @@
+<%- include("header") -%>
+
+<div class="card" style="margin-top: 5%;">
+  <div class="card-body">
+
+<% let i = 0; %>
+<% staffNames.forEach(function(name){ %>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label"><h3>Staff <%= i+1 %>:</h3></label>
+    <div class="col-sm-10">
+      <form action="/oddresult" method="post">
+        <input type="hidden" name="formName" value="<%= formName %>">
+        <h3><%= name %><button type="submit" name="staffName" value="<%= name %>" class="btn btn-info" style="margin-left: 2rem;">See More...</button></h3>
+      </form>
+    </div>
+  </div>
+<% i++; }) %>
+
+</div>
+</div>
+
+<%- include("footer") -%>

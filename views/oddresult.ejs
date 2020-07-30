@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Feedback Management</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/tableexport.min.css">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">FEEDBACK MANAGEMENT</p>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="home" href="home">HOME <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" id="list" href="list">FORMS</a>
+          <a class="nav-item nav-link" id="results" href="results">RESULTS</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</head>
+
+<body>
+  <div class="container">
+
+  <table class="table">
+
+    <thead class="thead-light">
+      <tr>
+        <th colspan="13">
+          Staff Name : <%= staffName %>
+        </th>
+      </tr>
+      <tr>
+        <th scope="col" style="width: 200px;">S.No</th>
+        <th scope="col" style="width: 200px;">STUDENT NAME</th>
+        <% form.questions.forEach(function(question){ %>
+        <th scope="col" style="width: 200px;"><%= question.questionName %></th>
+        <% }); %>
+        <th scope="col" style="width: 200px;">Total(out of 100)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let n = form.responses; let m = form.questions.length; let total = 0 ; for(let i=0;i<n;i++){ %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td>B.Tech-IT</td>
+        <% for(let j=0;j<m;j++){ %>
+
+        <td><%= scores[j][i] %></td>
+        ` `<% total = total + Number(scores[j][i]); %>
+        <% } %>
+        <td><%= total %></td>
+      </tr>
+      <% total = 0 %>
+      <% } %>
+    </tbody>
+
+  </table>
+
+  <script src="/js/jquery-3.5.0.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/font-awesome.js"></script>
+
+  <script src="/js/xlsx.core.min.js"></script>
+  <script src="/js/blob.js"></script>
+  <script src="/js/blob.min.js"></script>
+  <script src="/js/FileSaver.min.js"></script>
+  <script src="/js/tableExport.min.js"></script>
+  <script>
+    $('table').tableExport();
+  </script>
+
+</div>
+
+</body>
+
+</html>

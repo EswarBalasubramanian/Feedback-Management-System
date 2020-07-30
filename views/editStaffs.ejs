@@ -1,0 +1,41 @@
+<%- include("header") %>
+<div class="d-flex justify-content-center">
+  <div class="card" style="width:60%; margin-top: 5%;margin-bottom: 5rem;">
+    <div class="card-body">
+
+
+  <form action="/deleteone" method="post">
+
+    <% let l = staffs.length; %>
+    <% for(let i=0;i<l;i++){ %>
+
+  <div class="container">
+    <div class="item row">
+      <div class="col-sm py-3">
+        Staff <%= i+1 %>:
+      </div>
+      <div class="col-sm py-3">
+        <%=  staffs[i].staffName  %>
+      </div>
+      <div class="col-sm">
+        <input type="checkbox" class="check-different" name="checkbox" value="<%= staffs[i].staffName %>" onChange="this.form.submit()">
+      </div>
+    </div>
+  </div>
+
+  <%  } %>
+
+  </form>
+
+
+
+      <form class="item d-flex justify-content-center" action="/createone" method="post">
+        <input type="text" class="different" name="newStaff" placeholder="New Staff" autocomplete="off">
+        <button class="button button-shape" type="submit" name="className" value="<%= className %>">+</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+
+<%- include("footer") %>

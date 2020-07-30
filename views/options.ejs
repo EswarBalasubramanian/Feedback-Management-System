@@ -1,0 +1,83 @@
+<%- include("header") -%>
+
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center">
+
+
+    <div class="card col-lg-3" style="width: 18rem; margin: 1rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <i class="card-img-top far fa-user fa-4x" style="padding-top: 1rem;"></i>
+      <div class="card-body">
+        <h3 class="card-title">C<small>OMPLETED STUDENTS RESULT</small></h3>
+        <p class="card-text">To inspect list of forms and for shareable links.</p>
+        <form action="/result" method="post">
+          <button class="btn btn-info" type="submit" name="formName" value="<%= formName %>">Result</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card col-lg-3" style="width: 18rem; margin: 1rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <i class="card-img-top fas fa-chart-line fa-4x" style="padding-top: 1rem;"></i>
+      <div class="card-body">
+        <h3 class="card-title">I<small>NDIVIDUAL STAFF RESULTS</small></h3>
+        <p class="card-text">To inspect list of forms and for shareable links.</p>
+        <form action="/staffresultlist" method="post">
+          <button class="btn btn-info" type="submit" name="formName" value="<%= formName %>">Staff List</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card col-lg-3" style="width: 18rem; margin: 1rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <i class="card-img-top fas fa-trash fa-4x" style="padding-top: 1rem;"></i>
+      <div class="card-body">
+        <h3 class="card-title">E<small>RASE FORM</small></h3>
+        <p class="card-text">To delete all information about the form completely.</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+          Delete
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">WARNING!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+<form action="/deleteone" method="post">
+
+      <div class="modal-body">
+
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label class="d-flex justify-content-left" for="exampleFormControlInput2">Are you sure you want to delete all information in this form?</label>
+              <label class="d-flex justify-content-left  dropdown-item disabled" for="exampleFormControlInput2">(Form : <%= formName %>)</label>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-info" name="formName" value="<%= formName %>">Delete</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+<%- include("footer") -%>

@@ -1,0 +1,116 @@
+body {
+  text-align: center;
+}
+
+.test{
+  color: red;
+}
+
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+input[type="checkbox"].check-different {
+  margin: 20px;
+}
+
+.button-shape {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 30px;
+  padding-bottom: 6px;
+  border-width: 0;
+}
+
+input[type="text"].different {
+  text-align: center;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #17a2b8;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-nav li a:hover {
+  color: #17a2b8 !important;
+}
+
+/* POPUP SECTION */
+.required::after {
+  content: "*";
+  color: red;
+}
+
+/* FOOTER SECTION */
+/* .wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+} */
+
+/* .footer-padding {
+	padding-bottom: 60px;
+} */
+
+/* #footer {
+  width: 100%;
+  background: #17a2b8;
+  margin-top: 100px;
+  position: absolute;
+}
+
+#footer p {
+  margin-top: 16px; */
+  /* font-size: 12px; */
+  /* color: #fff; */
+/* } */
+
+.containerr {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.footer {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+
+/* Staff List Section */
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}

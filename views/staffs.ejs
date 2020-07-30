@@ -1,0 +1,71 @@
+<%- include("header") -%>
+
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center">
+
+
+    <div class="card col-lg-3" style="width: 18rem; margin: 1rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <i class="card-img-top fas fa-user-plus fa-4x" style="padding-top: 1rem;"></i>
+      <div class="card-body">
+        <h3 class="card-title">C<small>REATE NEW STAFF DATA</small></h3>
+        <p class="card-text">To create a new set of staffs data.</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">
+          Create
+        </button>
+      </div>
+    </div>
+
+    <div class="card col-lg-3" style="width: 18rem; margin: 1rem;">
+      <!-- <img src="..." class="card-img-top" alt="..."> -->
+      <i class="card-img-top fas fa-edit fa-4x" style="padding-top: 1rem;"></i>
+      <div class="card-body">
+        <h3 class="card-title">S<small>HOW STAFF DATA</small></h3>
+        <p class="card-text">To edit all saved Staff data.</p>
+        <a href="show" class="btn btn-info">Show Data</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Create New Set of Staff Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+<form action="/staffList" method="post">
+
+      <div class="modal-body">
+
+          <div class="modal-body">
+
+            <div class="form-group">
+              <label class="required d-flex justify-content-left" for="exampleFormControlInput1">Staff Class Name:</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" name="className">
+            </div>
+
+            <div class="form-group">
+              <label class="d-flex justify-content-left" for="exampleFormControlInput2">Enter Number of Staffs:</label>
+              <input type="number" class="form-control" id="exampleFormControlInput2" name="setLength" min="1">
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-info">Create</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("footer") -%>
