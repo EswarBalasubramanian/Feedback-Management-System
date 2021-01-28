@@ -3,12 +3,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+
 //MONGOOSE and MONGO DB = CONNECTION
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://admin-dada:33cKtZ0VuVQY@feedbackmanagementsyste.tqg4j.mongodb.net/feedbackDB?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb+srv://admin-dada:33cKtZ0VuVQY@fbms-cluster.tqg4j.mongodb.net/feedbackDB",
+  { useNewUrlParser: true }
 );
 
 const app = express();
@@ -17,10 +18,6 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
-// const scoreSchema = {
-//   scored: Number
-// };
 
 const staffSchema = {
   staffName: {
@@ -52,8 +49,6 @@ const formSchema = new mongoose.Schema({
 const Form = mongoose.model("form", formSchema);
 const Staff = mongoose.model("staff", staffSchema);
 const Question = mongoose.model("question", questionSchema);
-// const Score = mongoose.model("score", scoreSchema);
-// const Class = mongoose.model("class", classSchema);
 
 const question1 = new Question({
   questionName: "Comes to class on time",
@@ -133,7 +128,6 @@ app.get("/list", function (req, res) {
       res.render("list", { formNames: formNames });
     } else {
       console.log(err);
-      //log ERR
     }
   });
 });
@@ -323,9 +317,6 @@ app.post("/staffresultlist", function (req, res) {
           if (!staffName.includes(staff.staffName)) {
             staffName.push(staff.staffName);
           }
-          // else{
-          //break;;
-          // }
         });
       });
     });
@@ -341,7 +332,6 @@ app.post("/oddresult", function (req, res) {
       question.staffs.forEach(function (staff) {
         if (staff.staffName === staffName) {
           totalScores.push(staff.scores);
-          // console.log(staff.scores);
         }
       });
     });
