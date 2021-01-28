@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 
 mongoose.connect(
   "mongodb+srv://admin-dada:33cKtZ0VuVQY@fbms-cluster.tqg4j.mongodb.net/feedbackDB",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 const app = express();
@@ -211,19 +211,30 @@ app.post("/create", function (req, res) {
     Staff.findOne({ className: className }, function (err, foundList) {
       if (!err) {
         if (!foundList) {
-          for (let i = 0; i < setLength; i++) {
+          if (staffArr[0].length > 1) {
+            // more than 1 staff
+            for (let i in staffArr) {
+              const staff = new Staff({
+                staffName: staffArr[i],
+                className: className,
+                rating: 0,
+              });
+              staff.save();
+            }
+          } else {
+            //  only one staff
             const staff = new Staff({
-              staffName: staffArr[i],
+              staffName: staffArr,
               className: className,
               rating: 0,
             });
-
             staff.save();
           }
 
           res.redirect("/success");
         } else {
           //IF LIST IS FOUND
+          //ALREADY ADDED - DELETE TO ADD AGAIN
         }
       }
     });
