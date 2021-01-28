@@ -3,6 +3,7 @@
 * [Technologies](#technologies)
 * [Prerequisites](#prerequisites)
 * [Setup](#setup)
+* [Demo](#demo)
 
 ## General info
 This project is a simple Feedback Management System used to collect feedback responses in .xls format.
@@ -32,3 +33,7 @@ $ npm install
 $ npm start
 ```
 Use https://localhost:3000/
+
+## Demo
+
+Demo Link https://feedback-mgmt.herokuapp.com
