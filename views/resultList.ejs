@@ -3,21 +3,34 @@
 <div class="container-fluid">
   <div class="row d-flex justify-content-center">
 
-<% formNameList.forEach(function(name){ %>
+    <% formNameList.forEach(function(name){ %>
 
-    <div class="card col-lg-4" style="width: 18rem; margin: 1rem;">
-      <i class="card-img-top fas fa-file-alt fa-4x" style="padding-top: 1rem;"></i>
+    <div class="card col-lg-4" style="width: 18rem; margin: 1rem">
+      <span class="text-center"
+        ><img
+          src="/icons/xlsx.png"
+          class="card-img-top"
+          alt="file"
+          style="width: 100px; height: 100px; padding: 15px"
+      /></span>
       <div class="card-body">
         <h3 class="card-title"><%= name %></h3>
         <p class="card-text">To inspect list of data in <%= name %>.</p>
         <form action="/options" method="post">
-          <button class="btn btn-info" type="submit" name="formName" value="<%= name %>">Options</button>
+          <button
+            class="btn btn-info"
+            type="submit"
+            name="formName"
+            value="<%= name %>"
+          >
+            Options
+          </button>
         </form>
       </div>
     </div>
 
     <% }); %>
-
+    
   </div>
 </div>
 

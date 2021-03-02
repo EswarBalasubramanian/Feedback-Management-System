@@ -1,7 +1,7 @@
 <%- include("header") -%>
 
 <% let count = 1; let loop1 = 0; %>
-<form action="/response" method="post">
+<form class="entry__form" action="/response" method="post">
   <% defaultQuestions.forEach(function(question){  let loop2 = 0; %>
 
       <h3 class="d-flex justify-content-left"><%= count+'.'+question %></h3><br>
@@ -21,10 +21,10 @@
           <% staffNames.forEach(function(name){  %>
             <tr>
               <td class="d-flex justify-content-left" scope="row"><%= name %></td>
-              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="10"></td>
-              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="7.5"></td>
-              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="5"></td>
-              <td><input type="radio" style=“width:40px;height:40px;” name=<%= loop1 %>,<%= loop2 %> value="2.5"></td>
+              <td><label class="entry__label"><input type="radio" class="entry__label--input" name=<%= loop1 %>,<%= loop2 %> value="10"></label></td>
+              <td><label class="entry__label"><input type="radio" class="entry__label--input" name=<%= loop1 %>,<%= loop2 %> value="7.5"></label></td>
+              <td><label class="entry__label"><input type="radio" class="entry__label--input" name=<%= loop1 %>,<%= loop2 %> value="5"></label></td>
+              <td><label class="entry__label"><input type="radio" class="entry__label--input" name=<%= loop1 %>,<%= loop2 %> value="2.5"></label></td>
             </tr>
         <%  loop2++; }); %>
         </tbody>

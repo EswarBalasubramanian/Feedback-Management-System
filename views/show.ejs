@@ -3,25 +3,45 @@
 <div class="container-fluid">
   <div class="row d-flex justify-content-center">
 
-<% classNameList.forEach(function(name){ %>
+    <% classNameList.forEach(function(name){ %>
 
-    <div class="card col-lg-4" style="width: 18rem; margin: 1rem;">
-      <i class="card-img-top far fa-id-card fa-4x" style="padding-top: 1rem;"></i>
+    <div class="card col-lg-4" style="width: 18rem; margin: 1rem">
+      <span class="text-center"
+        ><img
+          src="/icons/name.png"
+          class="card-img-top"
+          alt="file"
+          style="width: 100px; height: 100px; padding: 15px"
+      /></span>
       <div class="card-body">
         <h3 class="card-title"><%= name %></h3>
         <p class="card-text">To inspect list of data in <%= name %>.</p>
         <form action="/list" method="post">
-          <button class="btn btn-info" type="submit" name="className" value="<%= name %>">Show Data</button>
+          <button
+            class="btn btn-info"
+            type="submit"
+            name="className"
+            value="<%= name %>"
+          >
+            Show Data
+          </button>
         </form>
-        <br>
+        <br />
         <form action="/deleteone" method="post">
-          <button class="btn btn-danger" type="submit" name="sclassName" value="<%= name %>">Delete</button>
+          <button
+            class="btn btn-danger"
+            type="submit"
+            name="sclassName"
+            value="<%= name %>"
+          >
+            Delete
+          </button>
         </form>
       </div>
     </div>
 
     <% }); %>
-
+    
   </div>
 </div>
 

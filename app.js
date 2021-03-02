@@ -1,4 +1,5 @@
 //jshint esversion:6
+require("dotenv").config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -7,10 +8,16 @@ const ejs = require("ejs");
 //MONGOOSE and MONGO DB = CONNECTION
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  "mongodb+srv://admin-dada:33cKtZ0VuVQY@fbms-cluster.tqg4j.mongodb.net/feedbackDB",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+const uri = process.env.ATLAS_URI;
+
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Database Connected"))
+  .catch((err) => console.log(err));
 
 const app = express();
 

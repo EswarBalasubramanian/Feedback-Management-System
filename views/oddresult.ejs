@@ -61,7 +61,7 @@
         <% for(let j=0;j<m;j++){ %>
 
         <td><%= scores[j][i] %></td>
-        ` `<% total = total + Number(scores[j][i]); %>
+        <% total = total + Number(scores[j][i]); %>
         <% } %>
         <td><%= total %></td>
       </tr>
@@ -74,7 +74,6 @@
   <script src="/js/jquery-3.5.0.min.js"></script>
   <script src="/js/popper.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/font-awesome.js"></script>
 
   <script src="/js/xlsx.core.min.js"></script>
   <script src="/js/blob.js"></script>

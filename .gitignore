@@ -26,3 +26,6 @@ __pycache__/
 *.pyc
 .vscode/
 data.db
+screenshots/*
+screenshots
+.prettierignore

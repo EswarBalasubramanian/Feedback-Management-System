@@ -1,10 +1,16 @@
 body {
   text-align: center;
+  font-family: "Catamaran", Helvetica, sans-serif;
 }
 
-.test{
-  color: red;
+/* HEADER SECTION START */
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
+
+/* HEADER SECTION END */
 
 .container-fluid {
   padding-top: 70px;
@@ -15,7 +21,7 @@ body {
   min-height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #F1F1F1;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 input[type="checkbox"].check-different {
@@ -71,28 +77,12 @@ input[type="text"]:focus {
 }
 
 /* FOOTER SECTION */
-/* .wrapper {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-} */
 
-/* .footer-padding {
-	padding-bottom: 60px;
-} */
-
-/* #footer {
-  width: 100%;
-  background: #17a2b8;
-  margin-top: 100px;
-  position: absolute;
+.text-muted {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
-
-#footer p {
-  margin-top: 16px; */
-  /* font-size: 12px; */
-  /* color: #fff; */
-/* } */
 
 .containerr {
   width: auto;
@@ -105,7 +95,6 @@ input[type="text"]:focus {
   color: #fff;
 }
 
-
 /* Staff List Section */
 .box {
   max-width: 400px;
@@ -113,4 +102,21 @@ input[type="text"]:focus {
   background: white;
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* ENTRY PAGE */
+.entry__form {
+  width: 80vw;
+  margin: 2rem auto;
+}
+
+.entry__label {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.entry__label--input {
+  width: 17px;
+  height: 17px;
 }
